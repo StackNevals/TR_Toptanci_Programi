@@ -1,0 +1,59 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "85887884f1886e9fc1f9016e1ce2d8eb",
+    "packages": [
+        {
+            "name": "zxing/qr-reader",
+            "version": "v1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/baagee/qr-code-reader.git",
+                "reference": "3c98049c0c4be41d6d91312e1cfe5610ac815293"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/baagee/qr-code-reader/zipball/3c98049c0c4be41d6d91312e1cfe5610ac815293",
+                "reference": "3c98049c0c4be41d6d91312e1cfe5610ac815293",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Zxing\\": "./lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "description": "PHP qr code reader library",
+            "keywords": [
+                "library",
+                "php",
+                "qr code"
+            ],
+            "support": {
+                "issues": "https://github.com/baagee/qr-code-reader/issues",
+                "source": "https://github.com/baagee/qr-code-reader/tree/master"
+            },
+            "time": "2020-07-03T07:48:18+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

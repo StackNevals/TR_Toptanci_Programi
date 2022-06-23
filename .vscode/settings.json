@@ -1,0 +1,19 @@
+{
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "78.135.82.192",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "mobimobi",
+            "group": "mobi",
+            "database": "cahitarf_deniz",
+            "username": "cahitarf_deniz",
+            "password": "4F_^p9KUy+s%"
+        }
+    ],
+    "discord.enabled": true
+}

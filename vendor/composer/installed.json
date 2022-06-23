@@ -1,0 +1,49 @@
+{
+    "packages": [
+        {
+            "name": "zxing/qr-reader",
+            "version": "v1.2",
+            "version_normalized": "1.2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/baagee/qr-code-reader.git",
+                "reference": "3c98049c0c4be41d6d91312e1cfe5610ac815293"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/baagee/qr-code-reader/zipball/3c98049c0c4be41d6d91312e1cfe5610ac815293",
+                "reference": "3c98049c0c4be41d6d91312e1cfe5610ac815293",
+                "shasum": ""
+            },
+            "require": {
+                "ext-gd": "*",
+                "php": ">=5.3"
+            },
+            "time": "2020-07-03T07:48:18+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "Zxing\\": "./lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0-only"
+            ],
+            "description": "PHP qr code reader library",
+            "keywords": [
+                "library",
+                "php",
+                "qr code"
+            ],
+            "support": {
+                "issues": "https://github.com/baagee/qr-code-reader/issues",
+                "source": "https://github.com/baagee/qr-code-reader/tree/master"
+            },
+            "install-path": "../zxing/qr-reader"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "zxing/qr-reader": "^1.2"
+    }
+}

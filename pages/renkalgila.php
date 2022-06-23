@@ -1,0 +1,1 @@
+c:\xampp\htdocs\smsapp\pages\renkalgila.php
