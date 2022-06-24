@@ -13,12 +13,12 @@
                 <a class="brand" href="#">Admin Paneli</a>
                 <ul class="nav">
                     <li><a href="index.php">GENEL ISTATISTIKLER</a></li>
-                    <li><a href="satislar.php">Satislar</a></li>
-                    <li><a href="musteriler.php">Musteriler</a></li>
-                    <li><a href="kullanicilar.php">Kullanıcılar</a></li>
-                    <li><a href="siparisler.php">Siparişler</a></li>
-                    <li><a href="tedarikciler.php">Tedarikciler</a></li>
-                    <li><a href="ayarlar.php">Ayarlar</a></li>
+                    <li><a href="index.php?sayfa=satislar">Satislar</a></li>
+                    <li><a href="index.php?sayfa=musteriler">Musteriler</a></li>
+                    <li><a href="index.php?sayfa=kullanicilar">Kullanıcılar</a></li>
+                    <li><a href="index.php?sayfa=siparisler">Siparişler</a></li>
+                    <li><a href="index.php?sayfa=tedarikciler">Tedarikciler</a></li>
+                    <li><a href="index.php?sayfa=ayarlar">Ayarlar</a></li>
                 </ul>
             </div>
         </div>
@@ -28,8 +28,7 @@
         
         $sayfa = $_GET["sayfa"];
 
-        if(isset($sayfa)){
-            
+        if(!isset($sayfa)){
         } else if ($sayfa == "satislar") {
             include("satislar.php");
         } else if ($sayfa == "musteriler") {
