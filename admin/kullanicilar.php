@@ -16,6 +16,7 @@
         if($row["authorization"] == 3){
             echo "<td>ADMIN (" . $row["authorization"] . ")</td>";
         } else {
+            // ! Daha ayaranmadi
             echo "<td><form action='../determinationsystems/changeauthorization?".$row["id"]."'>" ."<input type='number' placeholder='". $row["authorization"] . "'><button type='submit'>Gonder</button></form></td>";
         }
         echo "</tr>";
