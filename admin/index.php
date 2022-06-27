@@ -19,12 +19,12 @@ $kategoriler = array("satislar", "musteriler", "kullanicilar", "urunler", "tedar
                 <a class="brand" href="#">Admin Paneli</a>
                 <ul class="nav">
                     <li><a href="index.php">GENEL ISTATISTIKLER</a></li>
-                    <li><a href="index.php?sayfa=<?php echo $kategoriler[0] ?>"><?php echo $kategoriler[0] ?></a></li>
-                    <li><a href="index.php?sayfa=<?php echo $kategoriler[1] ?>"><?php echo $kategoriler[1] ?></a></li>
-                    <li><a href="index.php?sayfa=<?php echo $kategoriler[2] ?>"><?php echo $kategoriler[2] ?></a></li>
-                    <li><a href="index.php?sayfa=<?php echo $kategoriler[3] ?>"><?php echo $kategoriler[3] ?></a></li>
-                    <li><a href="index.php?sayfa=<?php echo $kategoriler[4] ?>"><?php echo $kategoriler[4] ?></a></li>
-                    <li><a href="index.php?sayfa=<?php echo $kategoriler[5] ?>"><?php echo $kategoriler[5] ?></a></li>
+                    <li><a href="index.php?sayfa=<?php echo $kategoriler[0] ?>"><?php echo ucfirst($kategoriler[0]) ?></a></li>
+                    <li><a href="index.php?sayfa=<?php echo $kategoriler[1] ?>"><?php echo ucfirst($kategoriler[1]) ?></a></li>
+                    <li><a href="index.php?sayfa=<?php echo $kategoriler[2] ?>"><?php echo ucfirst($kategoriler[2]) ?></a></li>
+                    <li><a href="index.php?sayfa=<?php echo $kategoriler[3] ?>"><?php echo ucfirst($kategoriler[3]) ?></a></li>
+                    <li><a href="index.php?sayfa=<?php echo $kategoriler[4] ?>"><?php echo ucfirst($kategoriler[4])?></a></li>
+                    <li><a href="index.php?sayfa=<?php echo $kategoriler[5] ?>"><?php echo ucfirst($kategoriler[5]) ?></a></li>
                 </ul>
             </div>
         </div>
