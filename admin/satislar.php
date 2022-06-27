@@ -32,7 +32,4 @@ echo "<h1>Toplam Musteri Sayisi: ". $musterisayisi ." </h1>";
 
 
 <!-- 
-    En cok satilan
-    En az satilan
-
  -->
