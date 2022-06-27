@@ -16,7 +16,7 @@
                     <li><a href="index.php?sayfa=satislar">Satislar</a></li>
                     <li><a href="index.php?sayfa=musteriler">Musteriler</a></li>
                     <li><a href="index.php?sayfa=kullanicilar">Kullanıcılar</a></li>
-                    <li><a href="index.php?sayfa=siparisler">Urunler</a></li>
+                    <li><a href="index.php?sayfa=urunler">Urunler</a></li>
                     <li><a href="index.php?sayfa=tedarikciler">Tedarikciler</a></li>
                     <li><a href="index.php?sayfa=ayarlar">Ayarlar</a></li>
                 </ul>
