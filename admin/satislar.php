@@ -19,19 +19,19 @@ while($row = mysqli_fetch_assoc($result)) {
     $i = $i+1;
 }
 
+$musterisayisi=1;
 while ($rowmusteriler = mysqli_fetch_assoc($resultmusteriler)) {
+    $musterisayisi = $musterisayisi+1;
     $fiyat = $rowmusteriler["toplamurunfiyati"] - $rowmusteriler["kapora"];
     $toplamfiyat = $toplamfiyat + $fiyat;
 }
 echo "<h1>Toplam Satis:" . $i . "</h1>";
-echo "<h1>Toplam Kar: ". $toplamfiyat ." </h1>"
+echo "<h1>Toplam Kar: ". $toplamfiyat ." </h1>";
+echo "<h1>Toplam Musteri Sayisi: ". $musterisayisi ." </h1>";
 ?>
 
 
 <!-- 
-    Toplam Kar
-    Toplam Satis
-    Toplam musteri
     En cok satilan
     En az satilan
 
