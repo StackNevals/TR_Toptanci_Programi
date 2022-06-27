@@ -1,3 +1,9 @@
+<?php
+$kategoriler = array("satislar", "musteriler", "kullanicilar", "urunler", "tedarikciler", "ayarlar");
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,12 +19,12 @@
                 <a class="brand" href="#">Admin Paneli</a>
                 <ul class="nav">
                     <li><a href="index.php">GENEL ISTATISTIKLER</a></li>
-                    <li><a href="index.php?sayfa=satislar">Satislar</a></li>
-                    <li><a href="index.php?sayfa=musteriler">Musteriler</a></li>
-                    <li><a href="index.php?sayfa=kullanicilar">Kullanıcılar</a></li>
-                    <li><a href="index.php?sayfa=urunler">Urunler</a></li>
-                    <li><a href="index.php?sayfa=tedarikciler">Tedarikciler</a></li>
-                    <li><a href="index.php?sayfa=ayarlar">Ayarlar</a></li>
+                    <li><a href="index.php?sayfa=<?php echo $kategoriler[0] ?>"><?php echo $kategoriler[0] ?></a></li>
+                    <li><a href="index.php?sayfa=<?php echo $kategoriler[1] ?>"><?php echo $kategoriler[1] ?></a></li>
+                    <li><a href="index.php?sayfa=<?php echo $kategoriler[2] ?>"><?php echo $kategoriler[2] ?></a></li>
+                    <li><a href="index.php?sayfa=<?php echo $kategoriler[3] ?>"><?php echo $kategoriler[3] ?></a></li>
+                    <li><a href="index.php?sayfa=<?php echo $kategoriler[4] ?>"><?php echo $kategoriler[4] ?></a></li>
+                    <li><a href="index.php?sayfa=<?php echo $kategoriler[5] ?>"><?php echo $kategoriler[5] ?></a></li>
                 </ul>
             </div>
         </div>
@@ -29,20 +35,20 @@
         $sayfa = $_GET["sayfa"];
 
         if(!isset($sayfa)){
-        } else if ($sayfa == "satislar") {
-            include("satislar.php");
-        } else if ($sayfa == "musteriler") {
-            include("musteriler.php");
-        } else if ($sayfa == "kullanicilar") {
-            include("kullanicilar.php");
-        } else if ($sayfa == "siparisler") {
-            include("siparisler.php");
-        } else if ($sayfa == "tedarikciler") {
-            include("tedarikciler.php");
-        } else if ($sayfa == "ayarlar") {
-            include("ayarlar.php");
+        } else if ($sayfa == $kategoriler[0]) {
+            include($kategoriler[0].".php");
+        } else if ($sayfa == $kategoriler[1]) {
+            include($kategoriler[1].".php");
+        } else if ($sayfa == $kategoriler[2]) {
+            include($kategoriler[2].".php");
+        } else if ($sayfa == $kategoriler[3]) {
+            include($kategoriler[3].".php");
+        } else if ($sayfa == $kategoriler[4]) {
+            include($kategoriler[4].".php");
+        } else if ($sayfa == $kategoriler[5]) {
+            include($kategoriler[5].".php");
         } else {
-
+            include("main.php");
         }
         ?>
     </div>
