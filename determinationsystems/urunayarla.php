@@ -44,10 +44,9 @@ mysqli_query($conn,$urunrenksql);
             mysqli_query($conn,$sqlayarlasql);
         }}
 } else if (isset($urunsayi)) {
-    $urunlericeksql = "UPDATE `urunler` SET `urunEnvanter` = `$urunsayi`  WHERE `urunid` = '$urunid'";
-    $urunlericek = mysqli_query($conn,$urunlericeksql);
-    $urunlericekrow = mysqli_fetch_array($urunlericek);
+    $urunenvanterguncellesql = "UPDATE `urunler` SET `urunEnvanter` = '$urunsayi' WHERE `urunid` = '$urunid'";
+    $urunlericek = mysqli_query($conn,$urunenvanterguncellesql);
 }
-header("Location: ../pages/urun-listele.php");
+header("Location: ../pages/urun-listesi.php");
 
 ?>
