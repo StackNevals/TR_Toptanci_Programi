@@ -5,8 +5,8 @@ include("../system/connection.php");
 $urunid = $_GET["urunid"];
 
 $urunmalzeme = $_GET["urunmalzeme"];
-
 $urunrenk = $_GET["urunrenk"];
+$urunsayi = $_GET["urunsayisi"];
 
 $gerekensayi = $_POST["gerekensayi"];
 $malzemeler = $_POST["malzemeler"];
@@ -43,6 +43,10 @@ mysqli_query($conn,$urunrenksql);
             echo $sqlayarlasql;
             mysqli_query($conn,$sqlayarlasql);
         }}
+} else if (isset($urunsayi)) {
+    $urunlericeksql = "UPDATE `urunler` SET `urunEnvanter` = `$urunsayi`  WHERE `urunid` = '$urunid'";
+    $urunlericek = mysqli_query($conn,$urunlericeksql);
+    $urunlericekrow = mysqli_fetch_array($urunlericek);
 }
 header("Location: ../pages/urun-listele.php");
 
