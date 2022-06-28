@@ -10,12 +10,11 @@ function qrCode($s, $w = 250, $h = 250){
 $urunid = $_GET["urunid"];
 
 
-$urunlersql = "SELECT * FROM `urunler` WHERE `id`='$urunid'";
+$urunlersql = "SELECT * FROM `urunler` WHERE `urunid`='$urunid'";
 $urunlerveri = mysqli_query($conn, $urunlersql);
 $urunlercekveri = mysqli_fetch_array($urunlerveri);
 $urunisim = $urunlercekveri["urunisim"];
 $theword = strval($urunid).strval($urunisim);
-
 
     $qr = qrCode($theword, 200, 200); // 200x200
 ?>
