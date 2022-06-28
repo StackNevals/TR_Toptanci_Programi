@@ -96,7 +96,7 @@ while ($insert = mysqli_fetch_array($database))
 
     </form>
 
-    <h1>Urun Malzeme Sayisi Degistirme</h1>
+    <h1>Urun Envanter Sayisi Degistirme</h1>
 
 <form action="../determinationsystems/urunayarla.php?" method="GET">
 
