@@ -23,7 +23,6 @@
           <th>Urun Renkleri</th> 
 
           <th>Envanterdeki Urun Sayisi</th> 
-          <th>Urun QR Olustur</th> 
 
         </tr>
 
@@ -60,7 +59,6 @@ while ($insert = mysqli_fetch_array($database))
     echo "<td>" . $insert['urunrenk'] . "</td>";
 
     echo "<td>" . $insert['urunEnvanter'] . "</td>";
-    echo "<td><a href='../determinationsystems/urunicinqrolustur.php?urunid=".$insert["urunid"]."'>QR OLUSTUR</a></td>";
 
     echo "</tr>";
 
