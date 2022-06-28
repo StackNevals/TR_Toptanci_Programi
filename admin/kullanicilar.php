@@ -15,14 +15,35 @@
         echo "<td>" . $row["username"] . "</td>";
         if($row["authorization"] == 3){
             echo "<td>ADMIN (" . $row["authorization"] . ")</td>";
-        } else {
-            echo "<td><form action='../determinationsystems/changeauthorization?".$row["id"]."'>" ."<input type='number' placeholder='". $row["authorization"] . "'><button type='submit'>Gonder</button></form></td>";
+        } else if( $row["authorization"] == 2) {
+            // ! Daha yapilmadi.
+            echo "<td><form action='../determinationsystems/admin/changeauthorization?".$row["id"]."'>" ."<input type='number' placeholder='Satis Sorumlusu - ". $row["authorization"] . "'><button type='submit'>Gonder</button></form></td>";
+        } else if($row["authorization"] == 1) {
+            // ! Daha yapilmadi.
+            echo "<td><form action='../determinationsystems/admin/changeauthorization?".$row["id"]."'>" ."<input type='number' placeholder='Tedarikci - ". $row["authorization"] . "'><button type='submit'>Gonder</button></form></td>";
+        } else if($row["authorization"] == 4) {
+            echo "<td><form action='../determinationsystems/admin/changeauthorization?".$row["id"]."'>" ."<input type='number' placeholder='Depocu - ". $row["authorization"] . "'><button type='submit'>Gonder</button></form></td>";
         }
         echo "</tr>";
     }
     ?>
-    <!-- <tr> -->
-        <!-- <td><?php echo $kullanici->yetki; ?></td> -->
-    <!-- </tr> -->
 </table>
 
+ <!-- 
+    // ! Daha yapilmadi.
+  -->
+<form action="../determinationsystems/admin/kullaniciayarla">
+    <label for="number">Id'si</label>
+    <input type="number" id="number">
+    
+    <label for="sekil">Olan Kullaniciyi</label>
+
+    <select name="sekil" id="sekil">
+    <option value="Satisci">Satis Gorevlisi</option>
+    <option value="Tedarikci">Tedarikci</option>
+    <option value="Depocu">Depocu</option>
+    </select>
+    <label for="sekil">olarak ayarla</label>
+    
+    <button type="submit">Ayarla</button>
+</form>
