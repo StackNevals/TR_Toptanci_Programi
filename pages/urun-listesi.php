@@ -95,3 +95,15 @@ while ($insert = mysqli_fetch_array($database))
         <button type="submit">GONDER</button>
 
     </form>
+
+    <h1>Urun Malzeme Sayisi Degistirme</h1>
+
+<form action="../determinationsystems/urunayarla.php?" method="GET">
+
+    <input type="number" name="urunid" id=""/>
+
+    <input type="number" placeholder="Sayi Giriniz" name="urunsayisi" id=""/>
+
+    <button type="submit">GONDER</button>
+
+</form>
