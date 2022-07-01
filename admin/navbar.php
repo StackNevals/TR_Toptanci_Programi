@@ -52,23 +52,33 @@
         <li class="opened active has-sub">
             <a href="index.html">
                 <i class="entypo-gauge"></i>
-                <span class="title">Dashboard</span>
+                <span class="title">Sayfalar</span>
             </a>
             <ul class="visible">
                 <li>
-                    <a href="index.html">
-                        <span class="title">Dashboard 1</span>
-                    </a>
+                    <a href="index.php">GENEL ISTATISTIKLER</a>
                 </li>
                 <li>
-                    <a href="dashboard-2.html">
-                        <span class="title">Dashboard 2</span>
-                    </a>
-                </li>
+                    <a href="index.php?sayfa=<?php echo $kategoriler[0] ?>"><?php echo ucfirst($kategoriler[0]) ?></a>                    </li>
+                    
                 <li>
-                    <a href="dashboard-3.html">
-                        <span class="title">Dashboard 3</span>
-                    </a>
+                    <a href="index.php?sayfa=<?php echo $kategoriler[1] ?>"><?php echo ucfirst($kategoriler[1]) ?></a>
+                </li>
+
+                <li>
+                    <a href="index.php?sayfa=<?php echo $kategoriler[2] ?>"><?php echo ucfirst($kategoriler[2]) ?></a>
+                </li>
+                    
+                <li>
+                    <a href="index.php?sayfa=<?php echo $kategoriler[3] ?>"><?php echo ucfirst($kategoriler[3]) ?></a>
+                </li>
+                    
+                <li>
+                    <a href="index.php?sayfa=<?php echo $kategoriler[4] ?>"><?php echo ucfirst($kategoriler[4])?></a>
+                </li>
+                    
+                <li>
+                    <a href="index.php?sayfa=<?php echo $kategoriler[5] ?>"><?php echo ucfirst($kategoriler[5]) ?></a>
                 </li>
             </ul>
         </li>

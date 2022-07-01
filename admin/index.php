@@ -13,7 +13,7 @@ $kategoriler = array("satislar", "musteriler", "kullanicilar", "urunler", "tedar
 <body>
 
     <?php
-        include("main.php")
+        include("main.php");
     ?>
     
     <!-- <div class="navbar">
