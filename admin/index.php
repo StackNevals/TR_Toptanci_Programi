@@ -1,5 +1,5 @@
 <?php
-$kategoriler = array("satislar", "musteriler", "kullanicilar", "urunler", "tedarikciler", "ayarlar");
+$kategoriler = array("satislar", "musteriler", "kullanicilar", "urunler", "tedarikciler", "ayarlar", "Genel Istatistikler");
 ?>
 <!DOCTYPE html>
 
@@ -103,7 +103,7 @@ $kategoriler = array("satislar", "musteriler", "kullanicilar", "urunler", "tedar
 	} else if ($sayfa == $kategoriler[5]) {
 		include($kategoriler[5].".php");
 	} 
-    if(isset($sayfa)){
+    if(!$sayfa){
         include("genelistatistikler.php");
     }
 	

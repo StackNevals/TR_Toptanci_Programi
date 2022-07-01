@@ -56,7 +56,7 @@
             </a>
             <ul class="visible">
                 <li>
-                    <a href="index.php?sayfa=">GENEL ISTATISTIKLER</a>
+                    <a href="index.php?sayfa=genelistatistikler"><?php echo ucfirst($kategoriler[6]) ?></a>                    </li>
                 </li>
                 <li>
                     <a href="index.php?sayfa=<?php echo $kategoriler[0] ?>"><?php echo ucfirst($kategoriler[0]) ?></a>                    </li>
