@@ -102,7 +102,9 @@ $kategoriler = array("satislar", "musteriler", "kullanicilar", "urunler", "tedar
 		include($kategoriler[4].".php");
 	} else if ($sayfa == $kategoriler[5]) {
 		include($kategoriler[5].".php");
-	} 
+	} else if ($sayfa == "genelistatistikler") {
+        include("genelistatistikler.php");
+    }
     if(!$sayfa){
         include("genelistatistikler.php");
     }

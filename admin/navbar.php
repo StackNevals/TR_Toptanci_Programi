@@ -84,8 +84,8 @@
         </li>
         <li>
             <a href="highlights.html">
-                <span class="title">What's New</span>
-                <span class="badge badge-success badge-roundless">v2.0</span>
+                <span class="title"></span>
+                <span class="badge badge-success badge-roundless"></span>
             </a>
         </li>
     </ul>
