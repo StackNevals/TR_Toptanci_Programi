@@ -1,4 +1,4 @@
-<div class="payment noshow">
+<div class="payment">
       <h1>Urun bilgileri</h1>
       <h2>Tedarikci</h2>
       <input type="text" name="" placeholder="Julie Park" id=""><button class="btn">update</button>

@@ -1,5 +1,5 @@
 
-    <div class="subscription noshow">
+    <div class="subscription">
       <h1>Fiyat Hakkinda</h1>
       <h2>Kapora</h2>
       <input type="text" name="" placeholder="Julie Park" id=""><button class="btn">update</button>
