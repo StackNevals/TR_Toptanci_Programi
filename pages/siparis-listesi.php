@@ -145,7 +145,7 @@ while ($insert = mysqli_fetch_array($database))
           $planlanantarih = strtotime('15 day', strtotime($insert["tarih"]));
     $planlanantarih = date('Y-m-d', $planlanantarih);
     echo "<tr>";
-    echo "<td><a href='./pages/siparisdetay.php?siparisdetayid=" . $insert["id"] . "'> #" . $insert['id'] . "</td>";
+    echo "<td><a href='./pages/siparisdetay/index.php?siparisid=" . $insert["id"] . "'> #" . $insert['id'] . "</td>";
     echo "<td>" . $insert['adsoyad'] . "</td>";
     echo "<td>" . $insert['urunisim'] . "</td>";
     echo "<td>" . $insert['tarih'] . "</td>";
@@ -166,7 +166,7 @@ while ($insert = mysqli_fetch_array($database))
           $planlanantarih = strtotime('15 day', strtotime($insert["tarih"]));
     $planlanantarih = date('Y-m-d', $planlanantarih);
     echo "<tr>";
-    echo "<td><a href='./pages/siparisdetay.php?siparisdetayid=" . $insert["id"] . "'> #" . $insert['id'] . "</td>";
+    echo "<td><a href='./pages/siparisdetay/index.php?siparisid=" . $insert["id"] . "'> #" . $insert['id'] . "</td>";
     echo "<td>" . $insert['adsoyad'] . "</td>";
     echo "<td>" . $insert['urunisim'] . "</td>";
     echo "<td>" . $insert['tarih'] . "</td>";
@@ -187,7 +187,7 @@ while ($insert = mysqli_fetch_array($database))
     $planlanantarih = strtotime('15 day', strtotime($insert["tarih"]));
     $planlanantarih = date('Y-m-d', $planlanantarih);
     echo "<tr>";
-    echo "<td><a href='./pages/siparisdetay.php?siparisdetayid=" . $insert["id"] . "'> #" . $insert['id'] . "</td>";
+    echo "<td><a href='./pages/siparisdetay/index.php?siparisid=" . $insert["id"] . "'> #" . $insert['id'] . "</td>";
     echo "<td>" . $insert['adsoyad'] . "</td>";
     echo "<td>" . $insert['urunisim'] . "</td>";
     echo "<td>" . $insert['tarih'] . "</td>";

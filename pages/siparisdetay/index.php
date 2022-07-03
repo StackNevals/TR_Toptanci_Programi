@@ -10,6 +10,7 @@
 </head>
 <?php
       $sayfa = $_GET["sayfa"];
+      $siparisid = $_GET["siparisid"];
 ?>
 <body>
   <div class="upclass">
@@ -22,9 +23,9 @@
   </div>
   <div class="leftbox">
     <nav>
-      <a id="profile" <?php if(!isset($sayfa) || $sayfa == "kisiselbilgiler"){echo "class='active'";}?> href="index.php?sayfa=kisiselbilgiler"><i class="fa fa-user"></i></a>
-      <a id="payment" <?php if($sayfa == "fiyatbilgileri"){echo "class='active'";}?> href="index.php?sayfa=fiyatbilgileri"><i class="fa fa-credit-card"></i></a>
-      <a id="subscription" <?php if($sayfa == "urunbilgileri"){echo "class='active'";}?> href="index.php?sayfa=urunbilgileri"><i class="fa fa-tv"></i></a>
+      <a id="profile" <?php if(!isset($sayfa) || $sayfa == "kisiselbilgiler"){echo "class='active'";}?> href=<?php echo '"index.php?sayfa=kisiselbilgiler&siparisid='.$siparisid.'"'?>><i class="fa fa-user"></i></a>
+      <a id="payment" <?php if($sayfa == "fiyatbilgileri"){echo "class='active'";}?> href=<?php echo '"index.php?sayfa=fiyatbilgileri&siparisid='.$siparisid.'"'?>><i class="fa fa-credit-card"></i></a>
+      <a id="subscription" <?php if($sayfa == "urunbilgileri"){echo "class='active'";}?> href=<?php echo '"index.php?sayfa=urunbilgileri&siparisid='.$siparisid.'"'?>><i class="fa fa-tv"></i></a>
       <!-- <a id="privacy"><i class="fa fa-tasks"></i></a> -->
       <!-- <a id="settings"><i class="fa fa-cog"></i></a> -->
     </nav>
