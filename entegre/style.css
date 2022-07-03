@@ -1,8 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,900|Montserrat|Roboto");
 body {
   background: linear-gradient(to right, #3FB6A8, #7ED386);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-
+.upclass h1{
+  color: black;
+}
+.downclass {
+  margin-top: 10vh;
+}
 .container {
   background: #FFFFFF;
   width: 540px;
@@ -24,29 +32,6 @@ body {
   letter-spacing: 1px;
 }
 
-.CTA {
-  width: 80px;
-  height: 40px;
-  right: -20px;
-  bottom: 0;
-  margin-bottom: 90px;
-  position: absolute;
-  z-index: 1;
-  background: #7ED386;
-  font-size: 1em;
-  transform: rotate(-90deg);
-  transition: all 0.5s ease-in-out;
-  cursor: pointer;
-}
-.CTA h1 {
-  color: #FFFFFF;
-  margin-top: 10px;
-  margin-left: 9px;
-}
-.CTA:hover {
-  background: #3FB6A8;
-  transform: scale(1.1);
-}
 
 .leftbox {
   float: left;
@@ -88,7 +73,7 @@ nav a:first-child {
 
 .profile, .payment, .subscription, .privacy, .settings {
   transition: opacity 0.5s ease-in;
-  position: absolute;
+  /* position: absolute; */
   width: 70%;
 }
 
@@ -128,7 +113,7 @@ span {
 }
 
 .btn {
-  float: right;
+  /* float: right; */
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   font-size: 10px;
