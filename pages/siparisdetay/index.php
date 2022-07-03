@@ -37,7 +37,6 @@
       $sql = "SELECT * FROM siparisler WHERE id = '$siparisid'";
       $result = mysqli_query($conn, $sql);
       while($row = mysqli_fetch_array($result)){
-      // while($row = mysqli_fetch_assoc($result)){
       if(!isset($sayfa)){
         include("./pages/kisiselbilgiler.php");
       } else if($sayfa == "fiyatbilgileri") {
@@ -47,8 +46,7 @@
       } else if($sayfa == "kisiselbilgiler") {
         include("./pages/kisiselbilgiler.php");
       }
-      // }
-    }
+      }
 
     ?>
     </div>
