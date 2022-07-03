@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="style.css">
+<!-- <link rel="stylesheet" href="style.css"> -->
 
 
 
@@ -8,7 +8,7 @@
 
 <script>
 <?php
-
+include("../system/connection.php");
 
 function qrCode($s, $w = 250, $h = 250){
 
@@ -27,7 +27,6 @@ $urunid = $_GET["id"];
 
 
 
-function qryazdir($urunid) {
 $urunlersql = "SELECT * FROM `urunler` WHERE `urunid`='$urunid'";
 
 $urunlerveri = mysqli_query($conn, $urunlersql);
@@ -41,9 +40,14 @@ $theword = strval($urunid).strval($urunisim);
 
 
   $qr = qrCode($theword, 200, 200); // 200x200
-  echo '<script>function qryaz(){var URL = '.$qr.'; var W = window.open(URL); W.window.print();}</script>';
-}
-//echo '<img src="'.$qr.'">';
+  /*
+  function qryaz()
+  {
+    var URL = '.$qr.'; 
+    var W = window.open(URL); 
+    W.window.print();
+  }
+*/
 
 
 
@@ -52,7 +56,11 @@ $theword = strval($urunid).strval($urunisim);
 
 
 ?>
-
+function qryazdir(){
+  var URL = '<?php echo $qr; ?>';
+  var W = window.open(URL);
+  W.window.print();
+}
 </script>
 
 
@@ -168,7 +176,7 @@ while ($insert = mysqli_fetch_array($database))
     echo "<td>" . $insert['urunEnvanter'] . "</td>";
 
 
-    echo "<td><button onClick(".qryazdir($insert["urunid"]). "qryaz()".")>Qr Yazdır</button></td>";
+    echo "<td><button onClick='qryazdir()'>Qr Yazdır</button></td>";
  
  echo "</tr>";
 
