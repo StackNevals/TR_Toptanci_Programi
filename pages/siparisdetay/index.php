@@ -1,20 +1,21 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+<?php
+      $sayfa = $_GET["sayfa"];
+      $siparisid = $_GET["siparisid"];
+?>
 <head>
   <meta charset="UTF-8">
-  <title>X Siparis Bilgileri</title>
+  <title><?php echo $siparisid?> Siparis Bilgileri</title>
   <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.10/css/all.css'>
   <link rel="stylesheet" href="./style.css">
 <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script> -->
 
 </head>
-<?php
-      $sayfa = $_GET["sayfa"];
-      $siparisid = $_GET["siparisid"];
-?>
+
 <body>
   <div class="upclass">
-  <h1 class="siparisid">XX Siparis Bilgileri</h1>
+  <h1 class="siparisid"><?php echo $siparisid?> Siparis Bilgileri</h1>
   </div>
   <div class="downclass">
   <!-- partial:index.partial.html -->
@@ -32,7 +33,9 @@
   </div>
   <div class="rightbox">
     <?php
-
+      $sql = "SELECT * FROM siparisler WHERE siparisid = '$siparisid'";
+      $result = mysqli_query($conn, $sql);
+      while($row = mysqli_fetch_assoc($result)){
       if(!isset($sayfa)){
         include("./pages/kisiselbilgiler.php");
       } else if($sayfa == "fiyatbilgileri") {
@@ -42,7 +45,7 @@
       } else if($sayfa == "kisiselbilgiler") {
         include("./pages/kisiselbilgiler.php");
       }
-      // include("./pages/kisiselbilgiler.php");
+      }
       
 
     ?>
