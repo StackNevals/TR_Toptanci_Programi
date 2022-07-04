@@ -12,7 +12,7 @@
     <!--                                                               -->
     <!-- Consider inlining CSS to reduce the number of requested files -->
     <!--                                                               -->
-    <link type="text/css" rel="stylesheet" href="JsQRScanner.css">
+    <!-- <link type="text/css" rel="stylesheet" href="JsQRScanner.css"> -->
 
     <!--                                           -->
     <!-- Any title is fine                         -->
@@ -85,20 +85,29 @@
       <a style="font-weight: bold;" href="https://github.com/jbialobr/JsQRScanner">The source code is hosted on GitHub</a>
     </div>
   <script type="text/javascript">
+    var b;
     function onQRCodeScanned(scannedText)
     {
-    	var scannedTextMemo = document.getElementById("scannedTextMemo");
-    	if(scannedTextMemo)
+      var scannedTextMemo = document.getElementById("scannedTextMemo");
+      var scannedTextMemoHist = document.getElementById("scannedTextMemoHist");
+    	if(scannedTextMemoHist)
+    	{
+        if(scannedText == scannedTextMemo.value) {
+          console.log(scannedText == scannedTextMemo.value);
+        } else {
+          scannedTextMemoHist.value = scannedTextMemoHist.value + '\n' + scannedText;
+        }
+        console.log(scannedTextMemo);
+        console.log(scannedTextMemoHist);
+        console.log(scannedTextMemo.value);
+        console.log(b);
+    	}
+      if(scannedTextMemo)
     	{
     		scannedTextMemo.value = scannedText;
     	}
-    	var scannedTextMemoHist = document.getElementById("scannedTextMemoHist");
-    	if(scannedTextMemoHist)
-    	{
-    		scannedTextMemoHist.value = scannedTextMemoHist.value + '\n' + scannedText;
-    	}
+    	
     }
-    
     function provideVideo()
     {
         var n = navigator;
@@ -160,6 +169,7 @@
     		jbScanner.appendTo(scannerParentElement);
     	}        
     }
+
   </script>    
   </body>
 </html>
