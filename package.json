@@ -15,9 +15,5 @@
   "bugs": {
     "url": "https://github.com/StackNevals/TR_Toptanci_Programi/issues"
   },
-  "homepage": "https://github.com/StackNevals/TR_Toptanci_Programi#readme",
-  "dependencies": {
-    "html5-qrcode": "^2.2.1",
-    "instascan": "^1.0.0"
-  }
+  "homepage": "https://github.com/StackNevals/TR_Toptanci_Programi#readme"
 }
