@@ -131,10 +131,10 @@
         .then(function(devices) {
             var exCameras = [];
             devices.forEach(function(device) {
-            if (device.kind === 'videoinput') {
-              exCameras.push(device.deviceId)
-            }
-         });
+              if (device.kind === 'videoinput') {
+                exCameras.push(device.deviceId)
+              }
+            });
             
             return Promise.resolve(exCameras);
         }).then(function(ids){
