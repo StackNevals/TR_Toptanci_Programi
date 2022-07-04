@@ -209,6 +209,6 @@ while ($insert = mysqli_fetch_array($database))
     </table>
   </div>
  
-	
+	<h1><a href="./pages/urungiriscikis.php">Urun Giris/Cikisi</a></h1>
  
 </section>
