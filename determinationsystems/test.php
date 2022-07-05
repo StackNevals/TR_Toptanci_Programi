@@ -92,15 +92,7 @@
       var scannedTextMemoHist = document.getElementById("scannedTextMemoHist");
     	if(scannedTextMemoHist)
     	{
-        if(scannedText == scannedTextMemo.value) {
-          console.log(scannedText == scannedTextMemo.value);
-        } else {
           scannedTextMemoHist.value = scannedTextMemoHist.value + '\n' + scannedText;
-        }
-        console.log(scannedTextMemo);
-        console.log(scannedTextMemoHist);
-        console.log(scannedTextMemo.value);
-        console.log(b);
     	}
       if(scannedTextMemo)
     	{
