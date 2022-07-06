@@ -140,6 +140,11 @@ include ("./determinationsystems/DurumDegisFonksiyon.php");
 $database = mysqli_query($conn, "SELECT * FROM siparisler");
 while ($insert = mysqli_fetch_array($database))
 {
+  $adsoyad = $insert["adsoyad"];
+  $musterilerdatabase = mysqli_query($conn, "SELECT * FROM `musteriler` WHERE `isim`='$adsoyad'");
+  while($musterilerrow = mysqli_fetch_array($musterilerdatabase)){
+      $url = "./pages/musteridetay.php?id=".$musterilerrow["id"];
+  }
   if($_SESSION["authorization"] == 1){
     if($insert["tedarikci"] == $_SESSION["username"]) {
           $planlanantarih = strtotime('15 day', strtotime($insert["tarih"]));
@@ -188,7 +193,7 @@ while ($insert = mysqli_fetch_array($database))
     $planlanantarih = date('Y-m-d', $planlanantarih);
     echo "<tr>";
     echo "<td><a href='./pages/siparisdetay/index.php?siparisid=" . $insert["id"] . "'> #" . $insert['id'] . "</td>";
-    echo "<td>" . $insert['adsoyad'] . "</td>";
+    echo "<td><a href=".$url.">" . $insert['adsoyad'] . "</a></td>";
     echo "<td>" . $insert['urunisim'] . "</td>";
     echo "<td>" . $insert['tarih'] . "</td>";
     echo "<td>" . $planlanantarih . "</td>";
