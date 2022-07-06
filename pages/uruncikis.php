@@ -8,8 +8,6 @@
   <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Janusz Białobrzewski" />
-    <!--                                                               -->
     <!-- Consider inlining CSS to reduce the number of requested files -->
     <!--                                                               -->
     <!-- <link type="text/css" rel="stylesheet" href="JsQRScanner.css"> -->
@@ -17,14 +15,13 @@
     <!--                                           -->
     <!-- Any title is fine                         -->
     <!--                                           -->
-    <title>JsQRScanner example</title>
+    <title>Qr Kod Okutma</title>
     
     <!--                                           -->
     <!-- This script loads your compiled module.   -->
     <script type="text/javascript" src="./js/jsqrscanner.nocache.js"></script>
   </head>
   <body>
-
     <div class="row-element-set row-element-set-QRScanner">
     <!-- RECOMMENDED if your web app will not function without JavaScript enabled -->
     <noscript>
@@ -34,20 +31,19 @@
       </div>
     </noscript>
     <div class="row-element-set error_message" id="secure-connection-message" style="display: none;" hidden >
-      You may need to serve this page over a secure connection (https) to run JsQRScanner correctly.
-    </div>
-    <script> 
+      Eger Hata Aliyorsaniz <a href="">BURAYA</a> basin.
+    </div>  
+    <script>
     if (location.protocol != 'https:') { 
       document.getElementById('secure-connection-message').style='display: block';
       }
-      </script>  
-
-      <h1>JsQRScanner example</h1>
+      </script> 
+      <h1>Qr Kod Okuma</h1>
       <div class="row-element">
         <div class="FlexPanel detailsPanel QRScannerShort">
           <div class="FlexPanel shortInfoPanel">
             <div class="gwt-HTML">
-              Point the webcam to a QR code.
+              QR Kodunu kameraya yakinlastirin
             </div>
           </div>
         </div>
@@ -61,7 +57,7 @@
         <div class="form-field form-field-memo">
           <div class="form-field-caption-panel">
             <div class="gwt-Label form-field-caption">
-              Scanned text
+              En Son Okunan
             </div>
           </div>
           <div class="FlexPanel form-field-input-panel">
@@ -72,7 +68,7 @@
         <div class="form-field form-field-memo">
           <div class="form-field-caption-panel">
             <div class="gwt-Label form-field-caption">
-              Scanned text history
+            Cikarilacak Urunler
             </div>
           </div>
           <div class="FlexPanel form-field-input-panel">
@@ -85,7 +81,6 @@
         </div>
       </div>
       <br>
-      <a style="font-weight: bold;" href="https://github.com/jbialobr/JsQRScanner">The source code is hosted on GitHub</a>
     </div>
   <script type="text/javascript">
 var b;
@@ -95,7 +90,7 @@ var b;
       var scannedTextMemoHist = document.getElementById("scannedTextMemoHist");
     	if(scannedTextMemoHist)
     	{
-        scannedTextMemoHist.value = scannedTextMemoHist.value + '\n' + scannedText;
+        scannedTextMemoHist.value = scannedTextMemoHist.value + ', ' + scannedText;
       }
       if(scannedTextMemo)
     	{
@@ -157,7 +152,7 @@ var b;
         //var jbScanner = new JsQRScanner(onQRCodeScanned, provideVideo);
         //reduce the size of analyzed image to increase performance on mobile devices
         jbScanner.setSnapImageMaxSize(300);
-        jbScanner.setScanInterval(2400)
+        jbScanner.setScanInterval(1500)
     	var scannerParentElement = document.getElementById("scanner");
     	if(scannerParentElement)
     	{

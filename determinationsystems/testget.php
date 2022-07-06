@@ -1,6 +1,3 @@
 <?php
-$scannedtext = $_GET["sikennidtext"];
-$scannedtext = explode("\n", $scannedtext);
-print_r($scannedtext);
-
+echo $thispage = $_SERVER['PHP_SELF'];
 ?>

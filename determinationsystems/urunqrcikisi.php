@@ -18,6 +18,6 @@ for($i=1; $i<count($scannedtext); $i++){
     }
     print_r($scannedtext);
     echo "<br> COunt:". count($row) ."<br>";
-    header("Location: ../pages/urunqrcikis.php");
+    header("Location: ../pages/uruncikis.php");
 }
 ?>
