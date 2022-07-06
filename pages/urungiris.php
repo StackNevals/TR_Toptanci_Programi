@@ -32,8 +32,15 @@
       </div>
     </noscript>
     <div class="row-element-set error_message" id="secure-connection-message" style="display: none;" hidden >
-      Eger Hata Aliyorsaniz <a href="">BURAYA</a> basin.
-    </div>
+      Eger Hata Aliyorsaniz 
+      <?php
+      echo $thispage = $_SERVER['PHP_SELF'];
+      echo $domain = $_SERVER['HTTP_HOST'];
+      $url = strval($domain).strval($thispage);
+      ?>
+      <a href=<?php echo "https://". $url; ?> >BURAYA</a> 
+      basin.
+    </div>  
     <script>
     if (location.protocol != 'https:') { 
       document.getElementById('secure-connection-message').style='display: block';
