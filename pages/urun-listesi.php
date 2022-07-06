@@ -3,11 +3,11 @@
 include("../system/connection.php");
 
 
-function qryaz($urunid,$urunisim,$w = 200,$h = 200) {
+function qryaz($urunisim,$w = 200,$h = 200) {
   $u = 'https://chart.googleapis.com/chart?chs=%dx%d&cht=qr&chl=%s';
   
   
-  $s = strval($urunid).strval($urunisim);
+  $s = strval($urunisim);
   
   $url = sprintf($u, $w, $h, $s);
   
@@ -57,7 +57,7 @@ while ($insert = mysqli_fetch_array($database)){
     $urunid = $insert["urunid"];
     $urunisim = $insert["urunisim"];  
 
-    $qr = qryaz($urunid,$urunisim, 200, 200); // 200x200
+    $qr = qryaz($urunisim, 200, 200); // 200x200
     echo "<script>function qryazdir".$urunid."(){
       var URL = '".$qr."';
       var W = window.open(URL);

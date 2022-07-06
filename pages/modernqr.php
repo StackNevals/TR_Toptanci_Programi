@@ -21,7 +21,7 @@
     
     <!--                                           -->
     <!-- This script loads your compiled module.   -->
-    <script type="text/javascript" src="../pages/js/jsqrscanner.nocache.js"></script>
+    <script type="text/javascript" src="./js/jsqrscanner.nocache.js"></script>
   </head>
   <body>
 
@@ -76,8 +76,11 @@
             </div>
           </div>
           <div class="FlexPanel form-field-input-panel">
-            <textarea id="scannedTextMemoHist" class="textInput form-memo form-field-input textInput-readonly" value="" rows="6" readonly>
+            <form action="../determinationsystems/urunqrgirisi.php" method="GET">
+            <textarea id="scannedTextMemoHist" name='sikennidtext' class="textInput form-memo form-field-input textInput-readonly" value="" rows="6" readonly>
             </textarea>
+            <button type="submit">GONDER</button>
+            </form>
           </div>
         </div>
       </div>
@@ -85,15 +88,15 @@
       <a style="font-weight: bold;" href="https://github.com/jbialobr/JsQRScanner">The source code is hosted on GitHub</a>
     </div>
   <script type="text/javascript">
-    var b;
+var b;
     function onQRCodeScanned(scannedText)
     {
       var scannedTextMemo = document.getElementById("scannedTextMemo");
       var scannedTextMemoHist = document.getElementById("scannedTextMemoHist");
     	if(scannedTextMemoHist)
     	{
-          scannedTextMemoHist.value = scannedTextMemoHist.value + '\n' + scannedText;
-    	}
+        scannedTextMemoHist.value = scannedTextMemoHist.value + '\n' + scannedText;
+      }
       if(scannedTextMemo)
     	{
     		scannedTextMemo.value = scannedText;
@@ -162,6 +165,8 @@
     		jbScanner.appendTo(scannerParentElement);
     	}
     }
+    <?php
+    ?>
   </script>
   </body>
 </html>

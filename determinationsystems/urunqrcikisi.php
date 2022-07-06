@@ -1,36 +1,22 @@
 <?php
-include '../vendor/autoload.php';
-include '../system/connection.php';
-$fayl = $_FILES['fayl']["tmp_name"];
-echo $fayl;
-echo "<br>";
-if ($_FILES["fayl"]) {
-    echo "fayl";
-    // $yol = "./dosyalar"; 
-    
-    // $yuklemeYeri = __DIR__ . DIRECTORY_SEPARATOR . $yol . DIRECTORY_SEPARATOR . $_FILES["fayl"]["name"];
-    // $sonuc = move_uploaded_file($_FILES["fayl"]["tmp_name"], $yuklemeYeri);
-    
-    // $qrcode = new \Zxing\QrReader($_FILES["fayl"]["tmp_name"]);  //图片路径
-    // $text = $qrcode->text();
-    $yol = "./dosyalar"; 
-    
-    $yuklemeYeri = __DIR__ . DIRECTORY_SEPARATOR . $yol . DIRECTORY_SEPARATOR . $_FILES["fayl"]["name"];
-    $sonuc = move_uploaded_file($_FILES["fayl"]["tmp_name"], $yuklemeYeri);
-    
-    $qrcode = new \Zxing\QrReader('./dosyalar/'.$_FILES["fayl"]["name"]);  //图片路径
-    $text = $qrcode->text(); 
-    echo $text ."<br>";
-    echo "text";
+include "../system/connection.php";
 
-    $sql = "SELECT * FROM `urunler`";
-    $veri = mysqli_query($conn, $sql);
-    while ($row = mysqli_fetch_array($veri)) {
-        $deger = strval($row["urunid"]) . strval($row["urunisim"]);
-        if($text == $deger){
-            $updatesql = "UPDATE `urunler` SET `urunEnvanter` = `urunEnvanter` - 1 WHERE `urunler`.`urunid` = '$row[urunid]'";
-            mysqli_query($conn,$updatesql);
-        }
+$scannedtext = $_GET["sikennidtext"];
+$scannedtext = explode(", ", $scannedtext);
+echo "count: ". count($scannedtext) ."<br>";
+
+for($i=1; $i<count($scannedtext); $i++){
+    echo $i . " 8</br>";
+    $sql = "SELECT * FROM `urunler` WHERE `urunisim` = '$scannedtext[$i]'";
+    $result = mysqli_query($conn,$sql);
+    $row = mysqli_fetch_array($result);
+    if($scannedtext[$i] == $row["urunisim"]) {
+        echo "<br>UYUSMA BULUNDU".$row["urunid"]."<br>";
+        $yenistok = $row["urunEnvanter"] -1;
+        $sql = "UPDATE `urunler` SET `urunEnvanter` = '$yenistok' WHERE `urunler`.`urunid` = '$row[urunid]'";
+        mysqli_query($conn,$sql);
     }
-    header("Location: ../pages/uruncikis.php");
+    print_r($scannedtext);
+    echo "<br> COunt:". count($row) ."<br>";
 }
+?>
