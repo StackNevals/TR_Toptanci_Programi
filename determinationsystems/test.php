@@ -154,14 +154,14 @@
         //var jbScanner = new JsQRScanner(onQRCodeScanned, provideVideo);
         //reduce the size of analyzed image to increase performance on mobile devices
         jbScanner.setSnapImageMaxSize(300);
+        jbScanner.setScanInterval(2400)
     	var scannerParentElement = document.getElementById("scanner");
     	if(scannerParentElement)
     	{
     	    //append the jbScanner to an existing DOM element
     		jbScanner.appendTo(scannerParentElement);
-    	}        
+    	}
     }
-
-  </script>    
+  </script>
   </body>
 </html>
