@@ -79,7 +79,7 @@
             </div>
           </div>
           <div class="FlexPanel form-field-input-panel">
-            <form action="../determinationsystems/urunqrcikisi.php" method="GET">
+            <form action="../determinationsystems/arakatmanforqr.php?yonlendirecekyer=urungirisi" method="POST">
             <textarea id="scannedTextMemoHist" name='sikennidtext' class="textInput form-memo form-field-input textInput-readonly" value="" rows="6" readonly>
             </textarea>
             <button type="submit">GONDER</button>

@@ -1,6 +1,5 @@
 <?php
-echo $thispage = $_SERVER['PHP_SELF'];
-echo $domain = $_SERVER['HTTP_HOST'];
-$url = strval($domain).strval($thispage);
-echo "https://". $url;
+$yonlendirecekyer = $_GET["yonlendirecekyer"];
+print_r($urunisimleri = $_POST["urunisimleri"]);
+print_r($miktarlar = $_POST["miktarlar"]);
 ?>
