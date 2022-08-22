@@ -1470,3 +1470,30 @@
 [02-Jul-2022 13:38:45 Europe/Istanbul] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/cahitarf/mobimobi.ml/pages/urun-listesi.php on line 35
 [02-Jul-2022 13:38:45 Europe/Istanbul] PHP Warning:  mysqli_query() expects parameter 1 to be mysqli, null given in /home/cahitarf/mobimobi.ml/pages/urun-listesi.php on line 33
 [02-Jul-2022 13:38:45 Europe/Istanbul] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, null given in /home/cahitarf/mobimobi.ml/pages/urun-listesi.php on line 35
+[14-Aug-2022 15:30:51 Europe/Istanbul] PHP Warning:  include(./system/connection.php): failed to open stream: No such file or directory in /home/cahitarf/mobimobi.ml/pages/siparis-listesi.php on line 126
+[14-Aug-2022 15:30:51 Europe/Istanbul] PHP Warning:  include(./system/connection.php): failed to open stream: No such file or directory in /home/cahitarf/mobimobi.ml/pages/siparis-listesi.php on line 126
+[14-Aug-2022 15:30:51 Europe/Istanbul] PHP Warning:  include(): Failed opening './system/connection.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cahitarf/mobimobi.ml/pages/siparis-listesi.php on line 126
+[14-Aug-2022 15:30:51 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/cahitarf/mobimobi.ml/pages/siparis-listesi.php:128
+Stack trace:
+#0 {main}
+  thrown in /home/cahitarf/mobimobi.ml/pages/siparis-listesi.php on line 128
+[14-Aug-2022 15:31:19 Europe/Istanbul] PHP Warning:  include(./system/connection.php): failed to open stream: No such file or directory in /home/cahitarf/mobimobi.ml/pages/siparis-listesi.php on line 126
+[14-Aug-2022 15:31:19 Europe/Istanbul] PHP Warning:  include(./system/connection.php): failed to open stream: No such file or directory in /home/cahitarf/mobimobi.ml/pages/siparis-listesi.php on line 126
+[14-Aug-2022 15:31:19 Europe/Istanbul] PHP Warning:  include(): Failed opening './system/connection.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cahitarf/mobimobi.ml/pages/siparis-listesi.php on line 126
+[14-Aug-2022 15:31:19 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/cahitarf/mobimobi.ml/pages/siparis-listesi.php:128
+Stack trace:
+#0 {main}
+  thrown in /home/cahitarf/mobimobi.ml/pages/siparis-listesi.php on line 128
+[14-Aug-2022 18:23:09 Europe/Istanbul] PHP Deprecated:  The behavior of unparenthesized expressions containing both '.' and '+'/'-' will change in PHP 8: '+'/'-' will take a higher precedence in /home/cahitarf/mobimobi.ml/pages/siparisdetay.php on line 1273
+[14-Aug-2022 18:23:09 Europe/Istanbul] PHP Deprecated:  The behavior of unparenthesized expressions containing both '.' and '+'/'-' will change in PHP 8: '+'/'-' will take a higher precedence in /home/cahitarf/mobimobi.ml/pages/siparisdetay.php on line 1337
+[14-Aug-2022 18:23:09 Europe/Istanbul] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/cahitarf/mobimobi.ml/pages/siparisdetay.php on line 49
+[14-Aug-2022 18:23:29 Europe/Istanbul] PHP Deprecated:  The behavior of unparenthesized expressions containing both '.' and '+'/'-' will change in PHP 8: '+'/'-' will take a higher precedence in /home/cahitarf/mobimobi.ml/pages/p.php on line 208
+[14-Aug-2022 18:23:29 Europe/Istanbul] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/cahitarf/mobimobi.ml/pages/p.php on line 16
+[14-Aug-2022 18:23:30 Europe/Istanbul] PHP Warning:  mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given in /home/cahitarf/mobimobi.ml/pages/siparisdetay.php on line 49
+[14-Aug-2022 18:23:30 Europe/Istanbul] PHP Warning:  include(./system/connection.php): failed to open stream: No such file or directory in /home/cahitarf/mobimobi.ml/pages/siparis-listesi.php on line 128
+[14-Aug-2022 18:23:30 Europe/Istanbul] PHP Warning:  include(./system/connection.php): failed to open stream: No such file or directory in /home/cahitarf/mobimobi.ml/pages/siparis-listesi.php on line 128
+[14-Aug-2022 18:23:30 Europe/Istanbul] PHP Warning:  include(): Failed opening './system/connection.php' for inclusion (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/cahitarf/mobimobi.ml/pages/siparis-listesi.php on line 128
+[14-Aug-2022 18:23:30 Europe/Istanbul] PHP Fatal error:  Uncaught Error: Call to a member function query() on null in /home/cahitarf/mobimobi.ml/pages/siparis-listesi.php:130
+Stack trace:
+#0 {main}
+  thrown in /home/cahitarf/mobimobi.ml/pages/siparis-listesi.php on line 130

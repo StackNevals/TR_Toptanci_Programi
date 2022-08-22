@@ -1,59 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
-<?php 
-      include("../../system/connection.php");
-      $sayfa = $_GET["sayfa"];
-      $siparisid = $_GET["siparisid"];
-?>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title><?php echo $siparisid?> Siparis Bilgileri</title>
-  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.0.10/css/all.css'>
-  <link rel="stylesheet" href="./style.css">
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script> -->
+<?php
+include("../../system/connection.php");
+$siparisid=$_GET["siparisid"];
 
+
+?>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
 </head>
-
 <body>
-  <div class="upclass">
-  <h1 class="siparisid"><?php echo $siparisid?> Siparis Bilgileri</h1>
-  </div>
-  <div class="downclass">
-  <!-- partial:index.partial.html -->
-  <div class="container">
-  <div id="logo"><h1 class="logo"></h1>
-  </div>
-  <div class="leftbox">
-    <nav>
-      <a id="profile" <?php if(!isset($sayfa) || $sayfa == "kisiselbilgiler"){echo "class='active'";}?> href=<?php echo '"index.php?sayfa=kisiselbilgiler&siparisid='.$siparisid.'"'?>><i class="fa fa-user"></i></a>
-      <a id="payment" <?php if($sayfa == "fiyatbilgileri"){echo "class='active'";}?> href=<?php echo '"index.php?sayfa=fiyatbilgileri&siparisid='.$siparisid.'"'?>><i class="fa fa-credit-card"></i></a>
-      <a id="subscription" <?php if($sayfa == "urunbilgileri"){echo "class='active'";}?> href=<?php echo '"index.php?sayfa=urunbilgileri&siparisid='.$siparisid.'"'?>><i class="fa fa-tv"></i></a>
-      <!-- <a id="privacy"><i class="fa fa-tasks"></i></a> -->
-      <!-- <a id="settings"><i class="fa fa-cog"></i></a> -->
-    </nav>
-  </div>
-  <div class="rightbox">
-    <?php
-      $sql = "SELECT * FROM siparisler WHERE id = '$siparisid'";
-      $result = mysqli_query($conn, $sql);
-      while($row = mysqli_fetch_array($result)){
-      if(!isset($sayfa)){
-        include("./pages/kisiselbilgiler.php");
-      } else if($sayfa == "fiyatbilgileri") {
-        include("./pages/fiyatbilgileri.php");
-      } else if($sayfa == "urunbilgileri") {
-        include("./pages/urunbilgileri.php");
-      } else if($sayfa == "kisiselbilgiler") {
-        include("./pages/kisiselbilgiler.php");
-      }
-      }
+<img style="position:absolute; right: 10px;" src="https://upload.wikimedia.org/wikipedia/tr/d/d3/QR_kodu.jpeg" height="150px"; />
+<h2>Müşteri Bilgileri</h2>
+<?php
 
-    ?>
-    </div>
-  </div>
-</div>
-<!-- partial -->
-  <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script><script  src="./script.js"></script> -->
+$sql = "SELECT * FROM siparisler WHERE id='$siparisid'";
+$result = $conn->query($sql);
+while($row = mysqli_fetch_array($result)){
+
+  echo "<label>Ad Soyad:" . $row["adsoyad"]. "</label><br>";
+  echo "<label>Telefon:" . $row["telefon"]. "</label><br>";
+  echo "<label>Telefon2:" . $row["yedektelefon"]. "</label><br>";
+  echo "<label>Adres:" . $row["adres"]. "</label><br>";
+
+
+
+}
+?>
+<h2>Sipariş Listesi</h2>
+
+<table>
+  <tr>
+    <th>Ürün</th>
+    <th>Fiyat</th>
+    <th>QR</th>
+  </tr>
+  <?php
+  $sql = "SELECT * FROM siparisler WHERE id='$siparisid'";
+  $result = $conn->query($sql);
+  $row = mysqli_fetch_array($result);
+  $musteriismi = $row["adsoyad"];
+  $tarihi = $row["tarih"];
+  $kontroletsql = "SELECT * FROM siparisler WHERE adsoyad='$musteriismi' AND tarih='$tarihi'";
+  $kontroletresult = $conn->query($kontroletsql);
+  while($kontroletrow = mysqli_fetch_array($kontroletresult)){
+    echo "<tr>";
+    echo "<td>" . $row["urunisim"] . "</td>";
+    echo "<td>" . $row["urunfiyat"] . "</td>";
+    echo "<td><img src='https://upload.wikimedia.org/wikipedia/tr/d/d3/QR_kodu.jpeg' height='150px' style='align-item:center;'; /></td>";
+    echo "</tr>";
+  }
+  ?>   
+</table>
 
 </body>
 </html>

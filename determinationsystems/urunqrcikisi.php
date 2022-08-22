@@ -11,5 +11,5 @@ for($i=1; $i<=$key; $i++){
     $sqlupdate = "UPDATE `urunler` SET `urunEnvanter` = `urunEnvanter` - '$miktarlar[$i]' WHERE `urunler`.`urunisim` = '$urunisimleri[$i]'";
     $result = mysqli_query($conn,$sqlupdate);
 }}
-
+header("Location: ../index.php");
 ?>

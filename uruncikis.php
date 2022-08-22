@@ -79,7 +79,7 @@
             </div>
           </div>
           <div class="FlexPanel form-field-input-panel">
-            <form action="../determinationsystems/arakatmanforqr.php?yonlendirecekyer=uruncikisi" method="POST">
+            <form action="../determinationsystems/arakatmanforqr.php?yonlendirecekyer=urungirisi" method="POST">
             <textarea id="scannedTextMemoHist" name='sikennidtext' class="textInput form-memo form-field-input textInput-readonly" value="" rows="6" readonly>
             </textarea>
             <button type="submit">GONDER</button>
@@ -91,23 +91,6 @@
     </div>
   <script type="text/javascript">
 var b;
-    function provideVideo()
-    {
-        var n = navigator;
-
-        if (n.mediaDevices && n.mediaDevices.getUserMedia)
-        {
-          return n.mediaDevices.getUserMedia({
-            video: {
-              facingMode: "environment"
-            },
-            audio: false
-          });
-        } 
-        
-        return Promise.reject('Your browser does not support getUserMedia');
-    }
-
     function onQRCodeScanned(scannedText)
     {
       var scannedTextMemo = document.getElementById("scannedTextMemo");
@@ -125,6 +108,22 @@ var b;
     		scannedTextMemo.value = scannedText;
     	}
       
+    }
+    function provideVideo()
+    {
+        var n = navigator;
+
+        if (n.mediaDevices && n.mediaDevices.getUserMedia)
+        {
+          return n.mediaDevices.getUserMedia({
+            video: {
+              facingMode: "environment"
+            },
+            audio: false
+          });
+        } 
+        
+        return Promise.reject('Your browser does not support getUserMedia');
     }
 
     function provideVideoQQ()

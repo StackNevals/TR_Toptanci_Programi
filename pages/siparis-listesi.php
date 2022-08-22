@@ -111,17 +111,11 @@ section {
     <table cellpadding="0" cellspacing="0" border="0">
       <thead>
         <tr>
-          <th>Sipariş idsi</th>
-          <th>Ad Soyad</th>
-		      <th>Ürün</th>
-          <th>Sipariş Tarihi</th>
-          <th>Planlanan Sevkiyat Tarihi</th>
-          <th>Telefon numarası</th>
-          <th>Adresi</th>
-          <th>Tedarikci</th>
-          <th>Durum</th>
-          <th>Durum Degistir</th> 
-          <th>Onayla</th> 
+        <th>id</th>
+        <th>Ad</th>
+        <th>Telefon</th>
+        <th>Alinan Tarih</th>
+        <th>Son Teslim Tarihi</th>
         </tr>
       </thead>
     </table>
@@ -129,87 +123,40 @@ section {
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-              <?php
-/**
- * Class and Function List:
- * Function list:
- * Classes list:
- */
-include ("./system/connection.php");
-include ("./determinationsystems/DurumDegisFonksiyon.php");
-$database = mysqli_query($conn, "SELECT * FROM siparisler");
-while ($insert = mysqli_fetch_array($database))
-{
-  $adsoyad = $insert["adsoyad"];
-  $musterilerdatabase = mysqli_query($conn, "SELECT * FROM `musteriler` WHERE `isim`='$adsoyad'");
-  while($musterilerrow = mysqli_fetch_array($musterilerdatabase)){
-      $url = "./pages/musteridetay.php?id=".$musterilerrow["id"];
-  }
-  if($_SESSION["authorization"] == 1){
-    if($insert["tedarikci"] == $_SESSION["username"]) {
-          $planlanantarih = strtotime('15 day', strtotime($insert["tarih"]));
-    $planlanantarih = date('Y-m-d', $planlanantarih);
-    echo "<tr>";
-    echo "<td><a href='./pages/siparisdetay/index.php?siparisid=" . $insert["id"] . "'> #" . $insert['id'] . "</td>";
-    echo "<td>" . $insert['adsoyad'] . "</td>";
-    echo "<td>" . $insert['urunisim'] . "</td>";
-    echo "<td>" . $insert['tarih'] . "</td>";
-    echo "<td>" . $planlanantarih . "</td>";
-    echo "<td>" . $insert['telefon'] . "</td>";
-    echo "<td>" . $insert['adres'] . "</td>";
-    echo "<td>" . $insert['urundurumu'] . "</td>";
- 
 
-    echo "<form action='./determinationsystems/forDurumDegistir.php?id=" . $insert["id"] . "' method='POST'>";
-    echo siparisDurumDegistir($_SESSION["authorization"]);
-    echo "<td><button type='submit'>Onayla</button></form>";
-   
-    echo "</tr>";
-    }
-  } else if ($_SESSION["authorization"]==4){
-    if($insert["urundurumu"] == "TAMAMLANDI" || $insert["urundurumu"] == "URETIMDEN TESLIM ALINDI" || $insert["urundurumu"] == "DEPOYA TESLIM EDILDI" ||$insert["urundurumu"] == "SEVKIYATTA" || $insert["urundurumu"] == "SIPARIS TAMAMLANDI"  ) {
-          $planlanantarih = strtotime('15 day', strtotime($insert["tarih"]));
-    $planlanantarih = date('Y-m-d', $planlanantarih);
-    echo "<tr>";
-    echo "<td><a href='./pages/siparisdetay/index.php?siparisid=" . $insert["id"] . "'> #" . $insert['id'] . "</td>";
-    echo "<td>" . $insert['adsoyad'] . "</td>";
-    echo "<td>" . $insert['urunisim'] . "</td>";
-    echo "<td>" . $insert['tarih'] . "</td>";
-    echo "<td>" . $planlanantarih . "</td>";
-    echo "<td>" . $insert['telefon'] . "</td>";
-    echo "<td>" . $insert['adres'] . "</td>";
-    echo "<td>" . $insert['urundurumu'] . "</td>";
- 
-    if($insert["urundurumu"] == "SIPARIS TAMAMLANDI") {
-      } else {
-    echo "<form action='./determinationsystems/forDurumDegistir.php?id=" . $insert["id"] . "' method='POST'>";
-    echo siparisDurumDegistir($_SESSION["authorization"]);
-    echo "<td><button type='submit'>Onayla</button></form>";
-   }
-    echo "</tr>";
-    }
-  } else{
-    $planlanantarih = strtotime('15 day', strtotime($insert["tarih"]));
-    $planlanantarih = date('Y-m-d', $planlanantarih);
-    echo "<tr>";
-    echo "<td><a href='./pages/siparisdetay/index.php?siparisid=" . $insert["id"] . "'> #" . $insert['id'] . "</td>";
-    echo "<td><a href=".$url.">" . $insert['adsoyad'] . "</a></td>";
-    echo "<td>" . $insert['urunisim'] . "</td>";
-    echo "<td>" . $insert['tarih'] . "</td>";
-    echo "<td>" . $planlanantarih . "</td>";
-    echo "<td>" . $insert['telefon'] . "</td>";
-    echo "<td>" . $insert['adres'] . "</td>";
-    echo "<td>" . $insert['tedarikci'] . "</td>";
-    echo "<td>" . $insert['urundurumu'] . "</td>";
- 
+      <?php
+      include("./system/connection.php");
+      $sql = "SELECT * FROM siparisler ORDER BY id DESC";
+      $result = $conn->query($sql);
+      while($row = mysqli_fetch_array($result)) {
+        $id = $row["id"];
+        $sid = $row["id"]-1;
+        $siparissql="SELECT * FROM siparisler WHERE id='$id'";
+        $siparisresult = $conn->query($siparissql);
+        $siparisrow = mysqli_fetch_array($siparisresult);
+        $sidsql="SELECT * FROM siparisler WHERE id='$sid'";
+        $sidresult = $conn->query($sidsql);
+        $sidrow = mysqli_fetch_array($sidresult);
+          if($siparisrow["telefon"]==$sidrow["telefon"]) {
+            // echo "<tr>";
+            // echo "<td>evet</td>";
+            // echo "<td>".$siparisrow["id"]."</td>";
+            // echo "<td>".$siparisrow["adsoyad"]."</td>";
+            // echo "<td>".$siparisrow["telefon"]."</td>";
+            // echo "</tr>";
+          } else {
+            $planlanantarih = strtotime('15 day', strtotime($siparisrow["tarih"]));
+            $planlanantarih = date('Y-m-d', $planlanantarih);
+            echo "<tr>";
+            echo "<td><a href='./pages/siparisdetay/index.php?siparisid=".$siparisrow["id"]."'>".$siparisrow["id"]."</td>";
+            echo "<td>".$siparisrow["adsoyad"]."</td>";
+            echo "<td>".$siparisrow["telefon"]."</td>";
+            echo "<td>".$siparisrow["tarih"]."</td>";
+            echo "<td>".$planlanantarih."</td>";
+            echo "</tr>";
+        }}
+      ?>
 
-    echo "<form action='./determinationsystems/forDurumDegistir.php?id=" . $insert["id"] . "' method='POST'>";
-    echo siparisDurumDegistir($_SESSION["authorization"]);
-    echo "<td><button type='submit'>Onayla</button></form>";
-   
-    echo "</tr>";
-}}
-?>
       </tbody>
     </table>
   </div>

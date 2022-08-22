@@ -3,11 +3,11 @@ include("../system/connection.php");
 $yonlendirecekyer = $_GET["yonlendirecekyer"];
 $scannedtext = $_POST["sikennidtext"];
 $scannedtext = explode(", ", $scannedtext);
-echo count($scannedtext);
+// echo count($scannedtext);
 if($yonlendirecekyer == "urungirisi") {
-    $url = "./urunqrgirisi.php";
+    $url = "urunqrgirisi.php";
 } else if ($yonlendirecekyer == "uruncikisi") {
-    $url = "./urunqrcikisi.php";
+    $url = "urunqrcikisi.php";
 }
 ?>
 <table>
@@ -39,15 +39,11 @@ for($i=1; $i<count($scannedtext); $i++){
 
     } else {
     echo "<tr>";
-    echo "<td><input name='urunisimleri[$i]' readonly value='".$urunisimarray[$i]."'/></td>";
-    echo "<td><input name='miktarlar[$i]' value='".$urunmiktar[$i]."'/></td>";
+    echo "<td><input name='urunisimleri[$i]' readonly value='".$urunisimarray[$i]."' disabled /></td>";
+    echo "<td><input name='miktarlar[$i]' value='".$urunmiktar[$i]."' disabled /></td>";
     echo "</tr>";
 }}
 ?>
 <button type="submit">ONAYLA</button>
 </form>
 </table>
-<?php
-print_r($urunisimarray);
-print_r($urunmiktar);
-?>
