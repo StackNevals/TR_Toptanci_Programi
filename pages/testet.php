@@ -53,12 +53,8 @@
               QR Kodunu kameraya yakinlastirin
             </div>
             <div>
-                <h1>TEST</h1>
-                <ul>
-                    <li>
-                      
-                    </li>
-                </ul>
+                <h1>Urunler</h1>
+                <ul id="urunler"></ul>
             </div>
           </div>
         </div>
@@ -76,7 +72,7 @@
             </div>
           </div>
           <div class="FlexPanel form-field-input-panel">
-            <textarea id="scannedTextMemo" class="textInput form-memo form-field-input textInput-readonly" rows="3" readonly>
+            <textarea id="scannedTextMemo" class="textInput form-memo form-field-input textInput-readonly" rows="3" >
             </textarea>
           </div>
         </div>
@@ -90,7 +86,7 @@
             <form action="../determinationsystems/arakatmanforqr.php?yonlendirecekyer=uruncikisi" method="POST">
             <textarea id="scannedTextMemoHist" name='sikennidtext' class="textInput form-memo form-field-input textInput-readonly" value="" rows="6" readonly>
             </textarea>
-            <button type="submit">GONDER</button>
+            <button type="submit" id="buttonforqr" disabled>GONDER</button>
             </form>
           </div>
         </div>
@@ -98,6 +94,65 @@
       <br>
     </div>
   <script type="text/javascript">
+    document.getElementById("buttonforqr").disabled = true;
+    const urunler = [];
+    // urunler.push("asd"); urunler.push("asdf");
+                      <?php
+                  include("../system/connection.php");
+                  $siparisid = $_GET["siparisid"];
+                  $sql = "SELECT * FROM siparisler WHERE id='$siparisid'";
+                  $result = $conn->query($sql);
+                  $row = mysqli_fetch_array($result);
+                  $musteriismi = $row["adsoyad"];
+                  $tarihi = $row["tarih"];
+                  $kontroletsql = "SELECT * FROM siparisler WHERE adsoyad='$musteriismi' AND tarih='$tarihi'";
+                  $kontroletresult = $conn->query($kontroletsql);
+                  while($kontroletrow = mysqli_fetch_array($kontroletresult)){
+                    echo "urunler.push('" . $row["urunisim"] . "');";
+                  }
+                  ?>
+
+
+                  console.log(urunler.length);
+        
+const urunlerEl = document.getElementById('urunler')
+urunler.forEach(urun => {
+    const el = `<li class="urun">${urun}</li>`
+    urunlerEl.innerHTML += el
+})
+
+const input = document.getElementById('scannedTextMemo')
+
+
+    const check = () => {
+            const data = input.value.trim()
+
+            for(i=0; i <= urunler.length; i++) {
+              const urun = urunler.includes(urunler[i])
+                if(urun) {
+                  if(document.querySelectorAll('li')[i].style.backgroundColor == 'green') {
+                  } else {
+                    document.querySelectorAll('li')[i].style.backgroundColor = 'green';
+                    return;
+                  }
+                } 
+              }}
+
+        const setInput = data => {
+            input.value = data
+            check()
+            controlgreen()
+        }
+
+        
+        input.addEventListener('input' , e => {
+            const data = e.target.value.trim()
+            
+            check()
+            
+        })
+        // setInterval(check , 1000)
+
 var b;
     function provideVideo()
     {
@@ -121,6 +176,9 @@ var b;
       var scannedTextMemo = document.getElementById("scannedTextMemo");
       var scannedTextMemoHist = document.getElementById("scannedTextMemoHist");
     	
+      if(scannedText) {
+        scannedTextMemo.value = setInput(scannedText)
+      }
       
       if(scannedTextMemoHist)
     	{
@@ -130,7 +188,8 @@ var b;
       }
       if(scannedTextMemo)
     	{
-    		scannedTextMemo.value = scannedText;
+    		scannedTextMemo.value = scannedText
+        
     	}
       
     }
@@ -180,6 +239,23 @@ var b;
     		jbScanner.appendTo(scannerParentElement);
     	}
     }
+
+    function controlgreen() {
+      j = 0
+      for (let index = 0; index <= urunler.length; index++) {
+        if(document.querySelectorAll('li')[index].style.backgroundColor == 'green') {
+          j++
+          console.log(j)
+          if(j == urunler.length) {
+          document.getElementById("buttonforqr").disabled = false;
+          // alert("Tüm ürünler alındı");
+        }
+        }      
+
+      }
+    }
+
+    setInterval(controlgreen, 1000);
     <?php
     ?>
   </script>
