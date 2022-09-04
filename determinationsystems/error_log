@@ -8,3 +8,9 @@
 [14-Aug-2022 13:21:07 Europe/Istanbul] PHP Warning:  key() expects parameter 1 to be array, null given in /home/cahitarf/mobimobi.ml/determinationsystems/urunqrgirisi.php on line 7
 [16-Aug-2022 11:54:16 Europe/Istanbul] PHP Warning:  A non-numeric value encountered in /home/cahitarf/mobimobi.ml/determinationsystems/siparisekle.php on line 62
 [16-Aug-2022 11:54:16 Europe/Istanbul] PHP Warning:  A non-numeric value encountered in /home/cahitarf/mobimobi.ml/determinationsystems/siparisekle.php on line 79
+[26-Aug-2022 11:20:52 Europe/Istanbul] PHP Warning:  end() expects parameter 1 to be array, null given in /home/cahitarf/mobimobi.cf/determinationsystems/urunqrgirisi.php on line 6
+[26-Aug-2022 11:20:52 Europe/Istanbul] PHP Warning:  key() expects parameter 1 to be array, null given in /home/cahitarf/mobimobi.cf/determinationsystems/urunqrgirisi.php on line 7
+[26-Aug-2022 22:43:55 Europe/Istanbul] PHP Warning:  end() expects parameter 1 to be array, null given in /home/cahitarf/mobimobi.cf/determinationsystems/urunqrcikisi.php on line 6
+[26-Aug-2022 22:43:55 Europe/Istanbul] PHP Warning:  key() expects parameter 1 to be array, null given in /home/cahitarf/mobimobi.cf/determinationsystems/urunqrcikisi.php on line 7
+[26-Aug-2022 23:32:04 Europe/Istanbul] PHP Warning:  end() expects parameter 1 to be array, null given in /home/cahitarf/mobimobi.cf/determinationsystems/urunqrcikisi.php on line 6
+[26-Aug-2022 23:32:04 Europe/Istanbul] PHP Warning:  key() expects parameter 1 to be array, null given in /home/cahitarf/mobimobi.cf/determinationsystems/urunqrcikisi.php on line 7
