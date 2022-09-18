@@ -50,7 +50,7 @@ for ($i=0; $i <count($tedarikci) ; $i++) {
     $sifirurunmalzemeiki = $urunmalzemeiki[$i];
     $depocuurunler = mysqli_query($conn, "SELECT * FROM urunler WHERE `urunisim`='$sifirurunisim'");
     $insertdepocu = mysqli_fetch_array($depocuurunler);
-    $urunmalzemedepocu = $insertdepocu['urunmalzeme'];  
+    $urunmalzemedepocu = $insertdepocu['urunisim'];  
     $depocuexplode= explode(", ", $urunmalzemedepocu);
     $falses = array();
     for ($i=0; $i < count($depocuexplode); $i++) { 

@@ -83,7 +83,7 @@
             </div>
           </div>
           <div class="FlexPanel form-field-input-panel">
-            <form action="../determinationsystems/arakatmanforqr.php?yonlendirecekyer=uruncikisi" method="POST">
+            <form action="../determinationsystems/siparisqrokuttum.php?siparisid=1" method="POST">
             <textarea id="scannedTextMemoHist" name='sikennidtext' class="textInput form-memo form-field-input textInput-readonly" value="" rows="6" readonly>
             </textarea>
             <button type="submit" id="buttonforqr" disabled>GONDER</button>
@@ -230,7 +230,7 @@ var b;
         var jbScanner = new JsQRScanner(onQRCodeScanned);
         //var jbScanner = new JsQRScanner(onQRCodeScanned, provideVideo);
         //reduce the size of analyzed image to increase performance on mobile devices
-        jbScanner.setSnapImageMaxSize(300);
+        // jbScanner.setSnapImageMaxSize(300);
         jbScanner.setScanInterval(1500)
     	var scannerParentElement = document.getElementById("scanner");
     	if(scannerParentElement)
